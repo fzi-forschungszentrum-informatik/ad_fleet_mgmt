@@ -1,0 +1,19 @@
+---
+parameters:
+  composition_dir:
+  foxglove: true
+
+windows:
+  - name: control_center
+    splits:
+      - commands:
+        - ${composition_dir}/restart_control_center.sh
+  - name: foxglove
+    if: foxglove
+    splits:
+      - commands:
+        - ${composition_dir}/foxglove_ui_fleet_overview.sh
+  - name: communication
+    splits:
+      - commands:
+        - ${composition_dir}/restart_com.sh

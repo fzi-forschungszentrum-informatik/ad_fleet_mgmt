@@ -1,0 +1,3 @@
+[submodule "ros_communication_devcontainer"]
+	path = ros_communication_devcontainer
+	url = git@github.com:fzi-forschungszentrum-informatik/ros_communication_devcontainer.git

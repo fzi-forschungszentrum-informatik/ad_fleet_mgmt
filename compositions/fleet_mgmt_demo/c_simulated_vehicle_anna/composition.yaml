@@ -1,0 +1,15 @@
+---
+parameters:
+  composition_dir:
+  communication: true
+
+windows:
+  - name: simulated_vehicle
+    splits:
+      - commands:
+        - ${composition_dir}/restart_simulated_vehicle.sh
+  - name: communication
+    if: communication
+    splits:
+      - commands:
+        - ${composition_dir}/restart_com.sh

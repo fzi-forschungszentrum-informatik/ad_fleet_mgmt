@@ -1,0 +1,21 @@
+---
+parameters:
+  composition_dir:
+  communication: true
+  foxglove: false
+
+windows:
+  - name: simulated_vehicle
+    splits:
+      - commands:
+        - ${composition_dir}/restart_simulated_vehicle.sh
+  - name: foxglove
+    if: foxglove
+    splits:
+      - commands:
+        - ${composition_dir}/foxglove_ui_vehicle_map.sh
+  - name: communication
+    if: communication
+    splits:
+      - commands:
+        - ${composition_dir}/restart_com.sh

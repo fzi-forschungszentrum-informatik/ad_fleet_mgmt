@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find-pkg-share foxglove_bridge)/launch/foxglove_bridge_launch.xml">
+        <arg name="port" value="8765"/>
+        <arg name="send_buffer_limit" value="200000000" />
+        <arg name="topic_whitelist" value='["^(?!.*(^/ota/|^/com/|_compressed$|tf_remapped$)).*$"]' />
+    </include>
+</launch>

@@ -1,0 +1,21 @@
+decompression:
+  - topic_regex: "^/shuttle_ella/costmap/costmap_remapped_compressed$"
+    msg_type: "nav_msgs/msg/OccupancyGrid"
+  - topic_regex: "^/shuttle_ella/visualization/planning/pso/submitted_visualization_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray
+  - topic_regex: "^/shuttle_ella/visualization/maneuver/announcements_barriers_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray
+  - topic_regex: "^/shuttle_ella/visualization/planning/free/curvature_planning_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray
+  - topic_regex: "^/shuttle_ella/visualization/planning/free/result_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray
+  - topic_regex: "^/shuttle_anna/costmap/costmap_remapped_compressed$"
+    msg_type: "nav_msgs/msg/OccupancyGrid"
+  - topic_regex: "^/shuttle_anna/visualization/planning/pso/submitted_visualization_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray
+  - topic_regex: "^/shuttle_anna/visualization/maneuver/announcements_barriers_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray
+  - topic_regex: "^/shuttle_anna/visualization/planning/free/curvature_planning_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray
+  - topic_regex: "^/shuttle_anna/visualization/planning/free/result_remapped_compressed$"
+    msg_type: visualization_msgs/msg/MarkerArray

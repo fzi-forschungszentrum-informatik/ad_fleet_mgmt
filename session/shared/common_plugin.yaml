@@ -1,0 +1,8 @@
+parameters:
+  ros_domain_id: 47
+  qos_config_file: /session/shared/qos.yaml
+
+  in: true
+  out: true
+  heartbeat: true
+  topic_monitor: true

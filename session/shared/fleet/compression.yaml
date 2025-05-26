@@ -1,0 +1,6 @@
+compression:
+  - topic_regex: "^/costmap/costmap_remapped$"
+  - topic_regex: "^/visualization/planning/pso/submitted_visualization_remapped$"
+  - topic_regex: "^/visualization/maneuver/announcements_barriers_remapped$"
+  - topic_regex: "^/visualization/planning/free/curvature_planning_remapped$"
+  - topic_regex: "^/visualization/planning/free/result_remapped$"

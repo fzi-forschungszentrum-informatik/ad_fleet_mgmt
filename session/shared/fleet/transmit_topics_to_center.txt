@@ -1,0 +1,8 @@
+/costmap/costmap_remapped_compressed
+/visualization/planning/pso/submitted_visualization_remapped_compressed
+/visualization/maneuver/announcements_barriers_remapped_compressed
+/visualization/planning/free/curvature_planning_remapped_compressed
+/visualization/planning/free/result_remapped_compressed
+/tf_remapped
+/waypoint_ack
+/vehiclebeat

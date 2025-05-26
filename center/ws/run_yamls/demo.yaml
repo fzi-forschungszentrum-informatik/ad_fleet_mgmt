@@ -1,0 +1,115 @@
+---
+parameters:
+  fleet: "shuttle_ella,shuttle_anna"
+  vehicle_1: shuttle_ella
+  vehicle_2: shuttle_anna
+  map_location: co
+  use_foxglove_bridge: true
+  echo: false
+  pub: false
+  echo_vehicle: shuttle_ella
+  vehicle_visualization: true
+  vehicle_urdf: /ws/vehicle_box_urdf.xml
+
+common:
+  before_commands:
+    - source ~/.bashrc
+
+windows:
+  - name: STATIC
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 run cc_py lanelet_publisher --ros-args -p input_file:=/ws/map_data/${map_location}/lanelets.pkl
+      - commands:
+        - ros2 run cc_py tf_map_to_cart_publisher --ros-args -p input_file:=/ws/map_data/${map_location}/tf_map_to_cart.pkl
+      - commands:
+        - ros2 run cc_py publish_map --ros-args -p input_file:=/ws/map_data/${map_location}/localization_map_reduced.pkl
+      - commands:
+        - ros2 run topic_tools relay /assisted_vehicle_foxglove /assisted_vehicle
+  - name: ASSIST
+    splits:
+      - commands:
+        - ros2 run cc_py assisted_vehicle_relay_manager --ros-args -p vehicles:=[${fleet}]
+  - name: CLEARVIZ
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 run cc_py clear_all_markers
+      - commands:
+        - ros2 run cc_py clear_a_star_visualization --ros-args -p vehicles:=[${fleet}]
+  - name: TF
+    layout: even-vertical
+    splits:
+      - commands:
+        - >
+          ros2 run tf2_ros static_transform_publisher
+          --x 0 --y 0 --z 0
+          --roll 0 --pitch 0 --yaw 0
+          --frame-id cart
+          --child-frame-id ${vehicle_1}_cart
+      - commands:
+        - >
+          ros2 run tf2_ros static_transform_publisher
+          --x 0 --y 0 --z 0
+          --roll 0 --pitch 0 --yaw 0
+          --frame-id cart
+          --child-frame-id ${vehicle_2}_cart
+      - commands:
+        - ros2 run topic_tools relay /${vehicle_1}/tf_remapped /tf
+      - commands:
+        - ros2 run topic_tools relay /${vehicle_2}/tf_remapped /tf
+  - name: VEH_VIZ
+    if: vehicle_visualization
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 run robot_state_publisher robot_state_publisher --ros-args -p robot_description:="$(cat ${vehicle_urdf})"
+      - commands:
+        - >
+          ros2 run tf2_ros static_transform_publisher
+          --x 0 --y 0 --z 0
+          --roll 0 --pitch 0 --yaw 0
+          --frame-id ${vehicle_1}_base_link
+          --child-frame-id ${vehicle_1}_urdf_link
+      - commands:
+        - >
+          ros2 run tf2_ros static_transform_publisher
+          --x 0 --y 0 --z 0
+          --roll 0 --pitch 0 --yaw 0
+          --frame-id ${vehicle_2}_base_link
+          --child-frame-id ${vehicle_2}_urdf_link
+  - name: FOX
+    if: use_foxglove_bridge
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 launch cc_py foxglove_bridge_launch.xml
+  - name: ECHO
+    if: echo
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 topic hz /${echo_vehicle}/costmap/costmap
+      - commands:
+        - ros2 topic hz /${echo_vehicle}/tf
+      - commands:
+        - ros2 topic echo /${echo_vehicle}/mission/mission_sender/active
+      - commands:
+        - ros2 topic echo /${echo_vehicle}/visualization/planning/free/result
+  - name: PUB
+    if: pub
+    layout: even-vertical
+    splits:
+      - commands:
+          - |
+            ros2 topic pub /move_base_free/goal geometry_msgs/PoseStamped "{header: {stamp: {sec: 0, nanosec: 0}, frame_id: 'map'}, pose: {position: {x: 0.0, y: 0.0, z: 0.0}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 0.0}}}"
+      - commands:
+          - |
+            ros2 topic echo /move_base_free/goal
+      - commands:
+          - |
+            ros2 topic pub /mission_bridge/send_goal std_msgs/String "{data: 'dummy string send at time: $(date +T%H:%M:%S%z)'}"
+      - commands:
+          - |
+            ros2 topic pub /planning/free/reset std_msgs/Empty "{}"

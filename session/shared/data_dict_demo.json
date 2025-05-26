@@ -1,0 +1,6 @@
+{
+  "machine_a_ip": "", // e.g. "000.000.000.000"
+  "machine_b_ip": "", // e.g. "000.000.000.000"
+  "machine_c_ip": "", // e.g. "000.000.000.000"
+  "localhost": "localhost"
+}

@@ -1,0 +1,505 @@
+{
+  "configById": {
+    "3D!7rmuvx": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 133.43095671488885,
+        "phi": 54.02625138950464,
+        "thetaOffset": -85.517446847854,
+        "targetOffset": [
+          -25.052418613323194,
+          -34.65667133953879,
+          1.2879072859285794e-15
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {
+        "transforms": {
+          "lineColor": "#ff0000",
+          "lineWidth": 0,
+          "showLabel": false,
+          "axisScale": 0,
+          "enablePreloading": true
+        },
+        "enableStats": true,
+        "syncCamera": true,
+        "ignoreColladaUpAxis": false,
+        "meshUpAxis": "y_up"
+      },
+      "transforms": {
+        "frame:map": {
+          "visible": true
+        },
+        "frame:": {
+          "visible": false
+        },
+        "frame:os1_front_left/os_sensor": {
+          "visible": true
+        },
+        "frame:shuttle_ella_odom": {
+          "visible": true
+        },
+        "frame:shuttle_ella_cart": {
+          "visible": true
+        },
+        "frame:shuttle_anna_odom": {
+          "visible": true
+        },
+        "frame:shuttle_anna_cart": {
+          "visible": true
+        },
+        "frame:cart": {
+          "visible": true
+        },
+        "frame:shuttle_ella_floating_odom_can_stabilized": {
+          "visible": true
+        },
+        "frame:shuttle_ella_floating_odom_can": {
+          "visible": true
+        },
+        "frame:shuttle_ella_base_link": {
+          "visible": true
+        },
+        "frame:base_link": {
+          "visible": true
+        },
+        "frame:heartbeat_frame": {
+          "visible": true
+        },
+        "frame:shuttle_ella_urdf_link": {
+          "visible": true
+        }
+      },
+      "topics": {
+        "/costmap/costmap": {
+          "visible": true,
+          "minColor": "#ffffff7a",
+          "maxColor": "#00000087",
+          "unknownColor": "#80808091",
+          "invalidColor": "#ff00ffab"
+        },
+        "/localization/map": {
+          "visible": true,
+          "minColor": "#ffffff7d",
+          "maxColor": "#00000075",
+          "unknownColor": "#80808080",
+          "invalidColor": "#ff00ff7a",
+          "colorMode": "custom"
+        },
+        "/initialpose": {
+          "visible": false,
+          "axisScale": 1,
+          "type": "axis",
+          "showCovariance": true
+        },
+        "/move_base_simple/goal": {
+          "visible": false
+        },
+        "/sensor/front_camera/image_color/compressed": {
+          "visible": false
+        },
+        "/visualization/maneuver/announcements_barriers": {
+          "visible": true
+        },
+        "/visualization/map/lanelets": {
+          "visible": true,
+          "namespaces": {
+            "event_regions": {
+              "visible": true
+            },
+            "lanelets": {
+              "visible": true
+            }
+          }
+        },
+        "/visualization/map/sliding_driving_area": {
+          "visible": true
+        },
+        "/leitstand_01/to_shuttle_ella/move_base_free/goal/sync": {
+          "visible": false,
+          "axisScale": 2.2,
+          "type": "arrow",
+          "arrowScale": [
+            2.5,
+            0.35,
+            0.15
+          ]
+        },
+        "/move_base_free/goal": {
+          "visible": true,
+          "type": "arrow",
+          "arrowScale": [
+            2.5,
+            0.35,
+            0.15
+          ]
+        },
+        "/shuttle_ella/visualization/planning/free/curvature_planning/sync": {
+          "visible": true
+        },
+        "/visualization/planning/free/curvature_planning": {
+          "visible": true
+        },
+        "/localization/constraint_list": {
+          "visible": false
+        },
+        "/visualization/planning/pso/submitted_visualization": {
+          "visible": false
+        },
+        "/visualization/planning/pso/submitted_visualization/decompressed": {
+          "visible": false
+        },
+        "/costmap/costmap/decompressed": {
+          "visible": true
+        },
+        "/shuttle_ella/visualization/maneuver/announcements_barriers": {
+          "visible": true,
+          "showOutlines": true,
+          "namespaces": {
+            "text": {
+              "visible": false
+            }
+          }
+        },
+        "/shuttle_ella/visualization/map/sliding_driving_area": {
+          "visible": true
+        },
+        "/shuttle_ella/visualization/planning/pso/submitted_visualization": {
+          "visible": true
+        },
+        "/shuttle_ella/costmap/costmap": {
+          "visible": true
+        },
+        "/shuttle_ella/visualization/planning/free/curvature_planning": {
+          "visible": false
+        },
+        "/shuttle_ella/sensors/camera/front_wide/image_raw_reduced_sync": {
+          "visible": false
+        },
+        "/shuttle_anna/costmap/costmap": {
+          "visible": true
+        },
+        "/shuttle_ella/costmap/costmap_remapped": {
+          "visible": true,
+          "colorMode": "custom",
+          "alpha": 0.4986,
+          "maxColor": "#ff00007a",
+          "minColor": "#ffffff63",
+          "unknownColor": "#8080807a",
+          "invalidColor": "#ff00ff7d"
+        },
+        "/shuttle_anna/costmap/costmap_remapped": {
+          "visible": true,
+          "colorMode": "custom",
+          "alpha": 0.4773,
+          "maxColor": "#b7ff006e",
+          "minColor": "#ffffff6b",
+          "unknownColor": "#80808078",
+          "invalidColor": "#ff00ff75"
+        },
+        "/shuttle_ella/visualization/planning/free/result": {
+          "visible": true,
+          "color": "#ff0000f2",
+          "namespaces": {
+            "start": {
+              "visible": true
+            }
+          }
+        },
+        "/shuttle_anna/visualization/planning/free/curvature_planning": {
+          "visible": false
+        },
+        "/shuttle_anna/visualization/planning/free/result": {
+          "visible": true,
+          "color": "#3b00fff2"
+        },
+        "/shuttle_anna/visualization/planning/free/curvature_planning_preview": {
+          "visible": true
+        },
+        "/shuttle_anna/move_base_free/goal_proposal": {
+          "visible": true,
+          "type": "arrow",
+          "arrowScale": [
+            1,
+            0.4,
+            0.15
+          ],
+          "color": "#7eff00ff"
+        },
+        "/shuttle_ella/move_base_free/goal_proposal": {
+          "visible": true,
+          "type": "arrow",
+          "color": "#ff6b6bff",
+          "arrowScale": [
+            1,
+            0.4,
+            0.15
+          ]
+        },
+        "/shuttle_ella/visualization/planning/free/result_preview": {
+          "visible": true,
+          "color": "#ff0000f0"
+        },
+        "/shuttle_anna/visualization/planning/free/result_preview": {
+          "visible": true,
+          "color": "#aeff00e6"
+        },
+        "/control_center/to_shuttle_ella/move_base_free/goal_sync": {
+          "visible": true,
+          "type": "arrow",
+          "arrowScale": [
+            2,
+            0.4,
+            0.15
+          ],
+          "color": "#ff6b6bff"
+        },
+        "/control_center/to_shuttle_anna/move_base_free/goal_sync": {
+          "visible": true,
+          "type": "arrow",
+          "arrowScale": [
+            2,
+            0.4,
+            0.15
+          ],
+          "color": "#7eff00ff"
+        },
+        "/shuttle_ella/visualization/planning/free/curvature_optimizing": {
+          "visible": false
+        },
+        "/to_shuttle_anna/move_base_free/goal": {
+          "type": "arrow",
+          "visible": true,
+          "arrowScale": [
+            2,
+            0.4,
+            0.15
+          ],
+          "color": "#d0ff00ff"
+        },
+        "/to_shuttle_ella/move_base_free/goal": {
+          "visible": true,
+          "type": "arrow",
+          "arrowScale": [
+            2,
+            0.4,
+            0.15
+          ],
+          "color": "#ff0000ff"
+        },
+        "/shuttle_anna/visualization/planning/free/curvature_optimizing": {
+          "visible": false
+        },
+        "param:/robot_description": {
+          "visible": false
+        },
+        "/shuttle_anna/visualization/map/sliding_driving_area": {
+          "visible": true
+        },
+        "/shuttle_anna/visualization/maneuver/announcements_barriers": {
+          "visible": true,
+          "namespaces": {
+            "text": {
+              "visible": false
+            }
+          }
+        },
+        "/shuttle_anna/visualization/planning/pso/submitted_visualization": {
+          "visible": false
+        },
+        "/localization/map_lowered_latched": {
+          "visible": true
+        },
+        "/shuttle_ella/visualization/planning/free/curvature_planning_remapped": {
+          "visible": true
+        },
+        "/shuttle_ella/visualization/planning/free/pso/submitted_visualization_remapped": {
+          "visible": true
+        },
+        "/shuttle_ella/visualization/planning/free/curvature_optimizing_remapped": {
+          "visible": true
+        },
+        "/shuttle_ella/visualization/planning/pso/submitted_visualization_remapped": {
+          "visible": true
+        },
+        "/shuttle_ella/sensor/front_camera/image_color/compressed_reduced": {
+          "visible": false
+        },
+        "/shuttle_anna/visualization/planning/free/curvature_optimizing_remapped": {
+          "visible": true
+        },
+        "/shuttle_anna/visualization/planning/free/curvature_planning_remapped": {
+          "visible": true
+        },
+        "/shuttle_anna/visualization/planning/pso/submitted_visualization_remapped": {
+          "visible": true
+        },
+        "/to_shuttle_ella/centerbeat": {
+          "visible": true
+        },
+        "/shuttle_ella/vehiclebeat": {
+          "visible": false
+        },
+        "/shuttle_ella/sensors/camera/front_wide/image_color_reduced": {
+          "visible": false
+        },
+        "/localization/map_lowered_latched_2": {
+          "visible": true
+        },
+        "/localization/map_lowered_latched_1": {
+          "visible": true
+        },
+        "/costmap/costmap_remapped": {
+          "visible": false
+        },
+        "/to_shuttle_anna/centerbeat": {
+          "visible": false
+        },
+        "/robot_description": {
+          "visible": false
+        }
+      },
+      "layers": {
+        "0294b588-8484-4c83-8d19-78ded91ee6b9": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "URDF",
+          "instanceId": "0294b588-8484-4c83-8d19-78ded91ee6b9",
+          "layerId": "foxglove.Urdf",
+          "sourceType": "topic",
+          "url": "/home/leitmotif/fleet_mgmt/comm/catkin-ws-src/fzi_shuttle_rviz/urdf/fzi_shuttle_anna.xml",
+          "filePath": "/home/go914_local/fleet_mgmt/fzi_shuttle_viz/fzi_shuttle.xml",
+          "topic": "/robot_description",
+          "framePrefix": "shuttle_ella_",
+          "displayMode": "auto",
+          "fallbackColor": "#e60000",
+          "order": 2,
+          "parameter": "/robot_description",
+          "links": {
+            "shuttle_ella_base_link": {
+              "visible": true
+            }
+          }
+        },
+        "20389e99-bf72-4331-999e-8a5e00a40d02": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "URDF",
+          "instanceId": "20389e99-bf72-4331-999e-8a5e00a40d02",
+          "layerId": "foxglove.Urdf",
+          "sourceType": "topic",
+          "url": "",
+          "filePath": "/home/go914_local/fleet_mgmt/fzi_shuttle_viz/fzi_shuttle.xml",
+          "topic": "/robot_description",
+          "framePrefix": "shuttle_anna_",
+          "displayMode": "auto",
+          "order": 1,
+          "parameter": "/robot_description",
+          "fallbackColor": "#92df00"
+        }
+      },
+      "publish": {
+        "type": "pose",
+        "poseTopic": "/move_base_free/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {},
+      "foxglovePanelTitle": "Fleet Overview and Assistance",
+      "followTf": "map"
+    },
+    "Publish!2nngs64": {
+      "buttonText": "Ping ELLA via Dummy-Waypoint",
+      "buttonTooltip": "",
+      "advancedView": false,
+      "value": "{\n  \"header\": {\n    \"stamp\": {\n      \"sec\": 0,\n      \"nanosec\": 0\n    },\n    \"frame_id\": \"\"\n  },\n  \"pose\": {\n    \"position\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"z\": 0\n    },\n    \"orientation\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"z\": 0,\n      \"w\": 0\n    }\n  }\n}",
+      "topicName": "to_shuttle_ella/move_base_free/goal",
+      "datatype": "geometry_msgs/msg/PoseStamped",
+      "foxglovePanelTitle": "Ping ELLA",
+      "buttonColor": "#cf0000"
+    },
+    "RawMessages!1tv0tg0": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/shuttle_ella/waypoint_ack.data",
+      "fontSize": 24
+    },
+    "Tab!n6epdb": {
+      "activeTabIdx": 0,
+      "tabs": [
+        {
+          "title": "Map",
+          "layout": {
+            "first": "3D!7rmuvx",
+            "second": {
+              "first": "Publish!2nngs64",
+              "second": "RawMessages!1tv0tg0",
+              "direction": "row",
+              "splitPercentage": 30.303030303030305
+            },
+            "direction": "column",
+            "splitPercentage": 88.34586466165413
+          }
+        }
+      ]
+    },
+    "Publish!zgd1ln": {
+      "buttonText": "Ping ANNA via Dummy-Waypoint",
+      "buttonTooltip": "",
+      "advancedView": false,
+      "value": "{\n  \"header\": {\n    \"stamp\": {\n      \"sec\": 0,\n      \"nanosec\": 0\n    },\n    \"frame_id\": \"\"\n  },\n  \"pose\": {\n    \"position\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"z\": 0\n    },\n    \"orientation\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"z\": 0,\n      \"w\": 0\n    }\n  }\n}",
+      "topicName": "to_shuttle_anna/move_base_free/goal",
+      "datatype": "geometry_msgs/msg/PoseStamped",
+      "foxglovePanelTitle": "Ping ANNA",
+      "buttonColor": "#7ef000"
+    },
+    "RawMessages!1dthkb7": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/shuttle_anna/waypoint_ack.data",
+      "fontSize": 24
+    }
+  },
+  "globalVariables": {
+    "globalVariable": 0
+  },
+  "userNodes": {},
+  "linkedGlobalVariables": [],
+  "playbackConfig": {
+    "speed": 1,
+    "messageOrder": "receiveTime",
+    "timeDisplayMethod": "ROS"
+  },
+  "layout": {
+    "first": "Tab!n6epdb",
+    "second": {
+      "first": "Publish!zgd1ln",
+      "second": "RawMessages!1dthkb7",
+      "direction": "row",
+      "splitPercentage": 30.303030303030305
+    },
+    "direction": "column",
+    "splitPercentage": 89.97821350762527
+  }
+}

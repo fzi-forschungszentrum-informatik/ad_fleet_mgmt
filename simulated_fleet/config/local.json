@@ -1,0 +1,8 @@
+{
+    "image_name": "simulated_vehicle",
+    "container_name": "simulated_vehicle",
+    "ros_domain_id": 47,
+    "network": "host",
+    "forward_ssh_agent": true,
+    "enable_gui_forwarding": true
+}

@@ -1,0 +1,33 @@
+parameters:
+################################
+# Required incoming parameters #
+################################
+  vehicle_ip: 
+  vehicle_name:
+  center_ip: 
+
+################################
+# Overwrite base parameters    #
+################################
+  host_ip: ${vehicle_ip}
+  host_name: ${vehicle_name}
+  peers: ${center_ip}
+
+  explicitly_adressed_incoming: true
+  topic_list_paths_incoming: /session/shared/center/transmit_topics_to_fleet.txt
+  source_names: "control_center"
+
+  topic_list_paths_outgoing: /session/shared/fleet/transmit_topics_to_center.txt
+
+  heartbeat_topics: /vehiclebeat
+  heartbeat_delay_topic_1: "/centerbeat"
+
+################################
+# Add additional windows       #
+################################
+windows:
+  - name: COMP
+    splits:
+      - commands:
+        - ros2 run com_py universal_compressor --ros-args
+            -p config_file:=/session/shared/fleet/compression.yaml

@@ -1,0 +1,14 @@
+parameters:
+  center_ip: "machine_a_ip"
+  vehicle_1: shuttle_ella
+  vehicle_2: shuttle_anna
+  vehicle_names: "shuttle_anna,shuttle_ella"
+  vehicle_ip_keys: "machine_b_ip + machine_c_ip"
+
+  vehicle_1_exists: true
+  vehicle_2_exists: true
+
+session_plugins:
+  - /session/shared/center/plugin.yaml
+  - /session/shared/common_plugin.yaml
+  - /ws/session/content/base/session_plugin_base.yaml

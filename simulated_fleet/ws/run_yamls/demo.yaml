@@ -1,0 +1,33 @@
+---
+parameters:
+  rosbag: breite-gasse_forschungsfabrik
+  vehicle_name: shuttle_ella
+
+common:
+  before_commands:
+    - source ~/.bashrc
+
+windows:
+  - name: PLAYBACK
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 bag play --loop /ws/rosbags/${rosbag}
+  - name: LIVE
+    splits:
+      - commands:
+        - ros2 run sim_py waypoint_ack_node --ros-args -p vehicle_name:=${vehicle_name}
+  - name: ADAPT
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 run sim_py tf_remapper --ros-args -p remap_prefix:=${vehicle_name}
+      - commands:
+        - ros2 run sim_py costmap_remapper --ros-args -p frame_prefix:=${vehicle_name}
+      - commands:
+        - ros2 run sim_py marker_remapper --ros-args -p frame_prefix:=${vehicle_name}
+  - name: FOX
+    layout: even-vertical
+    splits:
+      - commands:
+        - ros2 launch foxglove_bridge foxglove_bridge_launch.xml send_buffer_limit:=200000000

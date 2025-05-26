@@ -1,0 +1,9 @@
+parameters:
+  vehicle_ip: "machine_c_ip"
+  vehicle_name: shuttle_anna
+  center_ip: "machine_a_ip"
+
+session_plugins:
+  - /session/shared/fleet/plugin.yaml
+  - /session/shared/common_plugin.yaml
+  - /ws/session/content/base/session_plugin_base.yaml

@@ -1,0 +1,44 @@
+parameters:
+################################
+# Required incoming parameters #
+################################
+  center_ip: 
+  vehicle_1: 
+  vehicle_2: 
+  vehicle_names: # e.g. "machine_a,machine_b"
+  vehicle_ip_keys: 
+
+################################
+# Overwrite base parameters    #
+################################
+  host_ip: ${center_ip}
+  host_name: control_center
+  peers: ${vehicle_ip_keys}
+
+  topic_list_paths_incoming: /session/shared/fleet/transmit_topics_to_center.txt
+  source_names: ${vehicle_names}
+  locally_used_source_name_incoming: true
+
+  target_names: ${vehicle_names}
+  topic_list_paths_outgoing: /session/shared/center/transmit_topics_to_fleet.txt
+
+  vehicle_1_exists: false
+  vehicle_2_exists: false
+
+  heartbeat_topics: "/to_${vehicle_1}/centerbeat,/to_${vehicle_2}/centerbeat"
+  heartbeat_delay_topic_1: "/${vehicle_1}/vehiclebeat"
+  heartbeat_delay_topic_2: "/${vehicle_2}/vehiclebeat"
+
+################################
+# Additional Windows           #
+################################
+windows:
+  - name: DECO
+    splits:
+      - commands:
+        - ros2 run com_py universal_decompressor --ros-args
+            -p config_file:=/session/shared/center/decompression.yaml
+      - commands:
+        - ros2 topic hz /${vehicle_1}/costmap/costmap_remapped
+      - commands:
+        - ros2 topic hz /${vehicle_2}/costmap/costmap_remapped

@@ -1,0 +1,27 @@
+{
+    "image_name": "ros-communication",
+    "container_name": "ros-communication",
+
+    // Configures the container to use the Docker host's network namespace. 
+    // Used to control ros_communication_devcontainers of other machines via ssh and to exchange ros topics 
+    // Alternative: use custom narrow network access for heightened security (e.g. bridge networks)
+    "network": "host",
+
+    "custom_mounts" : [
+        {
+            "host_path": "#fleet_mgmt_path/session",
+            "container_path": "/session"
+        }
+    ],
+
+    "path_to_data_dict": "#fleet_mgmt_path/session/shared/data_dict.json",
+
+    // Enables SSH Agent Forwarding
+    // This is done automatically by VSC, but when working via CLI this setting is required
+    "forward_ssh_agent": true,
+
+    // Enables GUI applications within the container, such as launching gnome-terminals. 
+    // Alternative: use local terminals to avoid this setting for enhanced security.
+    "enable_gui_forwarding": true
+
+}

@@ -1,0 +1,13 @@
+{
+    "static_docker_run_args": [
+        "-e", "USER_UID=#uid",
+        "-e", "USER_GID=#gid",
+        "-e", "ROS_HOME=/home/myuser/ros_home",
+        "-e", "ROS_LOG_DIR=/home/myuser/ros_logs",
+        "-e", "ROS_DOMAIN_ID=47",
+        "--name", "#container_name",
+        "--rm",
+        "-v", "#project_dir/ws:/ws",
+        "--network", "#network"
+	]
+}

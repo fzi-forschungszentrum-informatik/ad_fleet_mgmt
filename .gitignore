@@ -1,0 +1,8 @@
+__pycache__
+.session_readonly.yaml
+session/shared/data_dict.json
+
+# ignore uncompressed rosbags
+*.mcap
+# dont ignore compressed rosbags
+!*.mcap.zstd
