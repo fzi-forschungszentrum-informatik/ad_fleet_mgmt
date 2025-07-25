@@ -135,16 +135,12 @@ Use of this repository is expected to be acknowledged through the following cita
 
 ```latex
 @InProceedings{gontscharow_multi_vehicle,
-  author    = {TODO},
+  author    = {Martin Gontscharow and Stefan Orf and Albert Schotschneider and Sven Ochs and Marc René Zofka and J. Marius Zöllner},
   title     = {{Fleet Management in Real-World Deployments: Insights from Multi-Vehicle Field Tests}},
-  booktitle = {TODO},
+  booktitle = {Proceedings of the IEEE International Automated Vehicle Validation Conference (IAVVC)},
   year      = {2025}
 }
 ```
 
 # Acknowledgements
-The research of this work was supported by
-the project ÖV-LeitmotiF-KI and was funded by the German
-Federal Ministry for Digital and Transport (BMDV), grant number 45AVF3004A-G.
-Responsibility for the information and views set out in this
-publication lies entirely with the authors.
+This work was created in the *Country 2 City --- Bridge* project of the *German Center for Future Mobility*, which is funded by the German Federal Ministry of Transport. Additionally, the work was supported by the German Federal Ministry for Transport (BMV) within the project *ÖV-LeitmotiF-KI* (grant number *45AVF3004A-G*). Responsibility for the information and views set out in this publication lies entirely with the authors.
